@@ -44,7 +44,7 @@ text will automatically be copied to google doc with timestamp and metadata.
 
 ### Login Page of the extension
 
-![login](./extension/screenshots/login_page_extension.png)
+![login](extension/screenshots/login_page_extension.png)
 
 ### Home Page of the extension
 
