@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "MoveToDoc",
+  "description": "Extension that includes a popup and requests host permissions and storage permissions .",
+  "version": "1.0",
+  "icons": {},
+  "action": {
+    "default_popup": "index.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "Ctrl+M": {
+      "suggested_key": {
+        "default": "Ctrl+M",
+        "mac": "Command+M"
+      },
+      "description": "Reload the movetodoc extension"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["script.js"]
+    }
+  ],
+  "host_permissions": ["https://gd.mh-home.xyz/"],
+  "permissions": [
+    "storage",
+    "contextMenus",
+    "tabs",
+    "cookies",
+    "clipboardRead",
+    "management",
+    "clipboardWrite"
+  ]
+}

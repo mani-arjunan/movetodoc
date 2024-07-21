@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title></title>
+</head>
+<style>
+  #loader {
+    position: absolute;
+    display: none;
+    left: 60%;
+    top: 70%;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+    margin: -76px 0 0 -76px;
+    border: 3px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 5px solid #3498db;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+
+  @-webkit-keyframes spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Add animation to "page content" */
+  .animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s;
+  }
+
+  @-webkit-keyframes animatebottom {
+    from {
+      bottom: -100px;
+      opacity: 0;
+    }
+
+    to {
+      bottom: 0px;
+      opacity: 1;
+    }
+  }
+
+  @keyframes animatebottom {
+    from {
+      bottom: -100px;
+      opacity: 0;
+    }
+
+    to {
+      bottom: 0;
+      opacity: 1;
+    }
+  }
+
+  #googleButton {
+    display: inline-block;
+    background: transparent;
+    color: white;
+    width: 100px;
+    border-radius: 5px;
+    border: none;
+    align-items: center;
+    justify-items: center;
+    font-size: 24px;
+    position: absolute;
+    left: 35%;
+    top: 40%;
+    white-space: nowrap;
+  }
+
+  #inputWrapperDiv {
+    display: flex;
+    justify-content: end;
+  }
+
+  #submitWrapperDiv {
+    display: flex;
+    justify-content: center;
+    margin: -20px 0;
+  }
+
+  .formWrapper ol {
+    margin: -20px 0;
+  }
+
+  #inputWrapperDiv input {
+    width: 300px;
+    align-self: center;
+    height: 20px;
+    background: transparent;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid white;
+  }
+
+  #submitButton {
+    border: none;
+    margin: 20px 0;
+    padding: 10px 16px;
+    border-radius: 5px;
+    width: 150px;
+    align-self: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: lightgrey;
+    color: black;
+  }
+
+  #logoutButton {
+    border: none;
+    margin: 15px 0;
+    padding: 10px;
+    border-radius: 5px;
+    width: 65px;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+  }
+
+  .formWrapper {
+    color: white;
+  }
+
+  .formWrapper li {
+    padding: 10px;
+  }
+
+  .formWrapper a {
+    color: white;
+  }
+
+  #googleButton a {
+    color: white;
+  }
+
+  #googleButton:hover {
+    cursor: pointer;
+  }
+
+  html {
+    width: 500px;
+    font-size: 25px;
+    height: 300px;
+    background-color: rgb(39, 39, 39);
+  }
+</style>
+
+<body id="body">
+  <div id="loader"></div>
+</body>
+<script src="script.js"></script>
+
+</html>

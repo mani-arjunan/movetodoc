@@ -1,0 +1,45 @@
+version: "3"
+services:
+  redis:
+    container_name: redis-google-doc
+    build:
+      context: /
+      dockerfile: /home/manikandan/Documents/google-doc-extension/be/.redis.Dockerfile
+    volumes:
+      - "/data:/data"
+    ports:
+      - "6380:6380"
+    networks:
+      - custom_network
+
+  google-doc-service:
+    image: google-doc-service
+    container_name: google-doc-service
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: npm run start
+    volumes:
+      - "./src:/usr/src/app/src"
+      - "/data:/data"
+    networks:
+      - custom_network
+    environment:
+      PORT: ${PORT}
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
+      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET}
+      REDIRECT_URI: ${REDIRECT_URI}
+      HOST: ${HOST}
+    expose:
+      - "8080"
+    ports:
+      - "8080:8080"
+    links:
+      - redis
+    depends_on:
+      - redis
+
+networks:
+  custom_network:
+    external: false
+    name: custom_network

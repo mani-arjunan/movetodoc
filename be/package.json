@@ -1,0 +1,22 @@
+{
+  "author": "Manikandan Arjunan",
+  "scripts": {
+    "start": "nodemon -r dotenv/config ./src/index.js",
+    "start-services": "docker compose -f ./docker-compose.yml up -d"
+  },
+  "type": "module",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "google-auth-library": "^9.10.0",
+    "googleapis": "^137.1.0",
+    "node-fetch": "^3.3.2",
+    "nodemon": "^3.1.0",
+    "qs": "^6.12.1",
+    "redis": "^4.6.14"
+  }
+}

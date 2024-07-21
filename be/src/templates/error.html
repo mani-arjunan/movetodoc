@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title></title>
+</head>
+
+<body>
+  <h1>Not able to Login to Google.Internal Server Error</h1>
+  <h3 id="timer">Window Will be Closed, 30 seconds left</h3>
+  <button onclick="closeWindow()">Close Now</button>
+</body>
+
+<script>
+  const timerElement = document.getElementById("timer");
+
+  function closeWindowInTimer() {
+    let timer = 30;
+    let timerInterval = setInterval(() => {
+      timer--;
+      if (timer === 0) {
+        clearInterval(timerInterval);
+        window.close();
+      }
+      timerElement.innerHTML = `Window Will be Closed, ${timer} seconds left`;
+    }, 1000);
+  }
+
+  function closeWindow() {
+    window.close();
+  }
+
+  closeWindowInTimer();
+</script>
+
+</html>
