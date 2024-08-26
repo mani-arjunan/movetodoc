@@ -2,7 +2,9 @@
   "author": "Manikandan Arjunan",
   "scripts": {
     "start": "nodemon -r dotenv/config ./src/index.js",
-    "start-services": "docker compose -f ./docker-compose.yml up -d"
+    "start-services": "docker compose -f ./docker-compose.yml up -d",
+    "d-build": "docker build -f ./Dockerfile -t mani210305/move-to-doc-be:latest .",
+    "d-push": "docker push mani210305/move-to-doc-be:latest"
   },
   "type": "module",
   "dependencies": {

@@ -1,7 +1,6 @@
 FROM node:16.15.0-alpine
-ENV INSTALL_PATH /usr/src/app
 
-WORKDIR $INSTALL_PATH
+WORKDIR /usr/src/app
 
 COPY package*.json ./
 
